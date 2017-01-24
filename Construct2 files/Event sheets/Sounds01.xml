@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Sounds01</name>
+    <events>
+        <include>CODESHEET</include>
+        <variable constant="0" name="KeyPressedActSounds" sid="1527536458333792" static="0" type="number">99</variable>
+        <event-block sid="1269185371747407">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3449997584169853" type="System" />
+            </conditions>
+            <actions>
+                <action id="2" name="Set at X" sid="6090660265777099" type="ArrayActSounds">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Value">&quot;blender01&quot;</param>
+                </action>
+                <action id="2" name="Set at X" sid="2539297207072814" type="ArrayActSounds">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Value">&quot;thunder01&quot;</param>
+                </action>
+                <action id="2" name="Set at X" sid="2167881692660531" type="ArrayActSounds">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Value">&quot;ambulance01&quot;</param>
+                </action>
+                <action id="2" name="Set at X" sid="9792383189125462" type="ArrayActSounds">
+                    <param id="0" name="X">3</param>
+                    <param id="1" name="Value">&quot;washing02&quot;</param>
+                </action>
+                <action id="2" name="Set at X" sid="976189376023091" type="ArrayActSounds">
+                    <param id="0" name="X">4</param>
+                    <param id="1" name="Value">&quot;dogbark01&quot;</param>
+                </action>
+                <action id="2" name="Set at X" sid="5555819424296931" type="ArrayActSounds">
+                    <param id="0" name="X">5</param>
+                    <param id="1" name="Value">&quot;phone01&quot;</param>
+                </action>
+                <action id="4" name="Preload" sid="7981882274245079" type="Audio">
+                    <param id="0" name="Audio file">blender01</param>
+                </action>
+                <action id="4" name="Preload" sid="789931727087688" type="Audio">
+                    <param id="0" name="Audio file">thunder01</param>
+                </action>
+                <action id="4" name="Preload" sid="6680659573499599" type="Audio">
+                    <param id="0" name="Audio file">ambulance01</param>
+                </action>
+                <action id="4" name="Preload" sid="1376985628565819" type="Audio">
+                    <param id="0" name="Audio file">washing02</param>
+                </action>
+                <action id="4" name="Preload" sid="2201432335540963" type="Audio">
+                    <param id="0" name="Audio file">dogbark01</param>
+                </action>
+                <action id="4" name="Preload" sid="3757039469193953" type="Audio">
+                    <param id="0" name="Audio file">phone01</param>
+                </action>
+                <action id="4" name="Set animation" sid="5330649635905646" type="SpriteActSounds">
+                    <param id="0" name="Animation">self.animation</param>
+                    <param id="1" name="From">0</param>
+                </action>
+                <action id="2" name="Stop" sid="4741550960254392" type="SpriteActSounds" />
+                <action id="2" name="Stop" sid="8299290631805466" type="btnBackground" />
+            </actions>
+        </event-block>
+        <event-block sid="9952131788931206">
+            <conditions>
+                <condition id="1" name="On any touch end" sid="3922155621234383" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="2" name="Stop" sid="5207138248441899" type="SpriteActSounds" />
+                <action id="5" name="Set frame" sid="1479995310644509" type="SpriteActSounds">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="5" name="Set frame" sid="2721830463978748" type="btnBackground">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="6" name="Stop" sid="37024784164014" type="Audio">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5433710455006411">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8918471322587114" type="Touch">
+                    <param id="0" name="Object">btnBackground</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="2670068445628955" type="Audio">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="4283182764535842" type="System">
+                    <param id="0" name="Variable">KeyPressedActSounds</param>
+                    <param id="1" name="Value">btnBackground.ID</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6703212028286552">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6554684827217709" type="btnBackground">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">KeyPressedActSounds</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="8797139979847445" type="btnBackground">
+                            <param id="0" name="Object">SpriteActSounds</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Play (by name)" sid="9851913349366468" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">ArrayActSounds.At(KeyPressedActSounds,0)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="3" name="Start" sid="2933029644920581" type="SpriteActSounds">
+                            <param id="0" name="From">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="3555963619745764" type="btnBackground">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
